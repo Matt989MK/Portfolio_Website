@@ -58,8 +58,8 @@ window.addEventListener("scroll", () => {
   const p2 = document.getElementById("project1_p2");
   const p3 = document.getElementById("project1_p3");
   p1.style.opacity = "100%";
-  p2.style.opacity = "100%";
-  p3.style.opacity = "100%";
+  p2.style.opacity = "0%";
+  p3.style.opacity = "0%";
 
 
   const minScroll = 4050;
@@ -69,13 +69,17 @@ window.addEventListener("scroll", () => {
 
     if (scrollTop >= minScroll && scrollTop <= 4578) {
       p1.style.opacity = 1 - scrollTop / 4578;
-
+      console.log(1 - scrollTop / 4578);
+  p2.style.opacity = 0;
+    p3.style.opacity = 0;
     } else if (scrollTop >= 4578 && scrollTop <= 4906) {
       p2.style.opacity = 1 - scrollTop / 4906;
-
+  p1.style.opacity = 0;
+    p3.style.opacity = 0;
     } else if (scrollTop >= 4906 && scrollTop <= 5890) {
       p3.style.opacity = 1 - scrollTop / 5890;
-
+  p1.style.opacity = 0;
+   p2.style.opacity = 0;
     } else {
       p1.style.opacity = 0;
       p2.style.opacity = 0;
@@ -93,8 +97,8 @@ window.addEventListener("scroll", () => {
     //  p1.style.left="60%";
     //image.style.position = "fixed";
     //image2.style.position = "fixed";
-
-    image.style.opacity = 1-scrollTop/maxScroll;
+    const currentPos = 5090- scrollTop;
+    image.style.opacity = 1-currentPos/1640;
 
     //image.style.marginLeft: "40px";
     //  image.style.marginTop: "120px";
