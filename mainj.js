@@ -57,7 +57,7 @@ window.addEventListener("scroll", () => {
   const p1 = document.getElementById("project1_p1");
   const p2 = document.getElementById("project1_p2");
   const p3 = document.getElementById("project1_p3");
-  p1.style.opacity = "100%";
+  p1.style.opacity = "0%";
   p2.style.opacity = "0%";
   p3.style.opacity = "0%";
 
@@ -68,51 +68,43 @@ window.addEventListener("scroll", () => {
   if (scrollTop > minScroll && scrollTop <= maxScroll) {
 
     if (scrollTop >= minScroll && scrollTop <= 4578) {
-      p1.style.opacity = scrollTop / 4578;
-      console.log(1 - scrollTop / 4578);
-  p2.style.opacity = 0;
-    p3.style.opacity = 0;
+      const currentPos2 = 5090 - scrollTop;
+      let test = (4578 - scrollTop) / (4578 - minScroll);
+      p1.style.opacity = 1 - test;
+
     } else if (scrollTop >= 4578 && scrollTop <= 4906) {
-      p2.style.opacity = 1 - scrollTop / 4906;
-  p1.style.opacity = 0;
-    p3.style.opacity = 0;
+      let test2 = (4906 - scrollTop) / (4906 - minScroll);
+      p2.style.opacity = 1 - test2;
+
     } else if (scrollTop >= 4906 && scrollTop <= 5890) {
-      p3.style.opacity = 1 - scrollTop / 5890;
-  p1.style.opacity = 0;
-   p2.style.opacity = 0;
+      let test3 = (5890 - scrollTop) / (5890 - minScroll);
+
+      p3.style.opacity = 1 - test3;
+
     } else {
       p1.style.opacity = 0;
       p2.style.opacity = 0;
       p3.style.opacity = 0;
-
     }
 
-
     test.style.position = "fixed";
-    imageWraper.style.position="fixed";
-    imageWraper.style.marginLeft="50px";
-    imageWraper.style.top=0;
-    imageWraper.style.marginTop="140px"
+    imageWraper.style.position = "fixed";
+    imageWraper.style.marginLeft = "50px";
+    imageWraper.style.top = 0;
+    imageWraper.style.marginTop = "140px"
 
-    //  p1.style.left="60%";
-    //image.style.position = "fixed";
-    //image2.style.position = "fixed";
-    const currentPos = 5090- scrollTop;
-    image.style.opacity = 1-currentPos/1640;
+    let imageOpacity = (5890 - scrollTop) / (5890 - minScroll);
 
-    //image.style.marginLeft: "40px";
-    //  image.style.marginTop: "120px";
+    image.style.opacity = 1 - imageOpacity;
 
-    //  console.log("FIXED");
   } else {
-  //  image.style.position = "absolute";
-  //image2.style.position = "absolute";
-  image.style.opacity = 1;
 
-imageWraper.style.position="absolute  ";
-imageWraper.style.marginLeft="";
-imageWraper.style.top="";
-imageWraper.style.marginTop=""
+    image.style.opacity = 1;
+
+    imageWraper.style.position = "absolute  ";
+    imageWraper.style.marginLeft = "";
+    imageWraper.style.top = "";
+    imageWraper.style.marginTop = ""
     test.style.position = "relative";
     //console.log("RELATIVE");
   }
