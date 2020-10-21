@@ -461,14 +461,16 @@ color:black;
 
 .Project-text{
   float:right;
-  margin-right: 450px;
+  margin-right: auto;
   margin-top: 150px;
   top:0;
   right:0;
+  justify-content: space-between;
 }
 .ImageWraper{
   position: relative;
-
+  margin-left: 50px;
+  margin-top: 10px;
 }
 .project-Image{
   width: 950px;
@@ -493,11 +495,20 @@ background-size: contain;
 
 }
 
+.projectLink{
+  height: 30rem;
+  padding: 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  cursor: default;
+  text-align: center;
+  font-size:7rem;
+}
 
-
-.project-1{
-    justify-content: space-around;
-
+.fa-github{
+  /* color:black; */
 }
 .fa-code{
   color:black;

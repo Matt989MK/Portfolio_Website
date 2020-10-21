@@ -62,7 +62,7 @@ window.addEventListener("scroll", () => {
   p3.style.opacity = "100%";
 
 
-  const minScroll = 4250;
+  const minScroll = 4050;
   const maxScroll = 5890; //limit
   var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   if (scrollTop > minScroll && scrollTop <= maxScroll) {
@@ -88,7 +88,7 @@ window.addEventListener("scroll", () => {
     imageWraper.style.position="fixed";
     imageWraper.style.marginLeft="50px";
     imageWraper.style.top=0;
-    imageWraper.style.marginTop="50px"
+    imageWraper.style.marginTop="140px"
 
     //  p1.style.left="60%";
     //image.style.position = "fixed";
