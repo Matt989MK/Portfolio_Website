@@ -68,7 +68,7 @@ window.addEventListener("scroll", () => {
   if (scrollTop > minScroll && scrollTop <= maxScroll) {
 
     if (scrollTop >= minScroll && scrollTop <= 4578) {
-      p1.style.opacity = 1 - scrollTop / 4578;
+      p1.style.opacity = scrollTop / 4578;
       console.log(1 - scrollTop / 4578);
   p2.style.opacity = 0;
     p3.style.opacity = 0;
