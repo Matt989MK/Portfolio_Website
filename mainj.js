@@ -103,6 +103,8 @@ window.addEventListener("scroll", () => {
   } else {
   //  image.style.position = "absolute";
   //image2.style.position = "absolute";
+  image.style.opacity = 1;
+
 imageWraper.style.position="absolute  ";
 imageWraper.style.marginLeft="";
 imageWraper.style.top="";
