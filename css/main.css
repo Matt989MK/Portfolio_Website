@@ -505,6 +505,9 @@ color:black;
   right:0;
   justify-content: space-between;
 }
+.Project-text p{
+  margin-bottom: 30px;
+}
 .ImageWraper{
   position: relative;
   margin-left: 50px;

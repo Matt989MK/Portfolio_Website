@@ -60,31 +60,34 @@ window.addEventListener("scroll", () => {
   p1.style.opacity = "0%";
   p2.style.opacity = "0%";
   p3.style.opacity = "0%";
+  var documentHeight=document.body.scrollHeight;
+   var project1_1min =document.getElementById("project1").scrollHeight*0.2;
+   var project1_1max =document.getElementById("project1").scrollHeight*0.4;
 
 
-  const minScroll = 4050;
-  const maxScroll = 5890; //limit
+
+
+  const minScroll = 4000; // add 1430 for each
+  const maxScroll = 8300; //limit
   var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   if (scrollTop > minScroll && scrollTop <= maxScroll) {
 
-    if (scrollTop >= minScroll && scrollTop <= 4578) {
-      const currentPos2 = 5090 - scrollTop;
-      let test = (4578 - scrollTop) / (4578 - minScroll);
+    if (scrollTop >= minScroll && scrollTop <= 5430) {
+
+      let test = (5500 - scrollTop) / (5500 - minScroll);
       p1.style.opacity = 1 - test;
 
-    } else if (scrollTop >= 4578 && scrollTop <= 4906) {
-      let test2 = (4906 - scrollTop) / (4906 - minScroll);
+    } else if (scrollTop >= 5430 && scrollTop <= 6860) {
+      let test2 = (6000 - scrollTop) / (6000 - minScroll);
+      p1.style.opacity = test2;
       p2.style.opacity = 1 - test2;
 
-    } else if (scrollTop >= 4906 && scrollTop <= 5890) {
-      let test3 = (5890 - scrollTop) / (5890 - minScroll);
+    } else if (scrollTop >= 6860 && scrollTop <= maxScroll) {
+      let test3 = (maxScroll - scrollTop) / (maxScroll - minScroll);
+      p2.style.opacity = test3;
 
       p3.style.opacity = 1 - test3;
 
-    } else {
-      p1.style.opacity = 0;
-      p2.style.opacity = 0;
-      p3.style.opacity = 0;
     }
 
     test.style.position = "fixed";
@@ -93,19 +96,24 @@ window.addEventListener("scroll", () => {
     imageWraper.style.top = 0;
     imageWraper.style.marginTop = "140px"
 
-    let imageOpacity = (5890 - scrollTop) / (5890 - minScroll);
+    let imageOpacity = (maxScroll - scrollTop) / (maxScroll - minScroll);
 
     image.style.opacity = 1 - imageOpacity;
 
-  } else {
+  } else if(scrollTop > maxScroll ) {
 
     image.style.opacity = 1;
 
-    imageWraper.style.position = "absolute  ";
+    imageWraper.style.position = "absolute";
     imageWraper.style.marginLeft = "";
-    imageWraper.style.top = "";
+    imageWraper.style.top =maxScroll+100+"px";
     imageWraper.style.marginTop = ""
+  
     test.style.position = "relative";
+
     //console.log("RELATIVE");
+  } else if (scrollTop<minScroll){
+    imageWraper.style.top =0+"px";
+    imageWraper.style.position = "absolute";
   }
 });
