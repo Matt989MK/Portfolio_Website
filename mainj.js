@@ -94,7 +94,7 @@ window.addEventListener("scroll", () => {
     imageWraper.style.position = "fixed";
     imageWraper.style.marginLeft = "50px";
     imageWraper.style.top = 0;
-    imageWraper.style.marginTop = "140px"
+    imageWraper.style.marginTop = "140px";
 
     let imageOpacity = (maxScroll - scrollTop) / (maxScroll - minScroll);
 
@@ -108,12 +108,15 @@ window.addEventListener("scroll", () => {
     imageWraper.style.marginLeft = "";
     imageWraper.style.top =maxScroll+100+"px";
     imageWraper.style.marginTop = ""
-  
     test.style.position = "relative";
 
     //console.log("RELATIVE");
   } else if (scrollTop<minScroll){
     imageWraper.style.top =0+"px";
+    imageWraper.style.marginTop = "140px";
+
+    imageWraper.style.top =minScroll+90+"px";
+
     imageWraper.style.position = "absolute";
   }
 });
