@@ -94,7 +94,7 @@ window.addEventListener("scroll", () => {
     imageWraper.style.position = "fixed";
     imageWraper.style.marginLeft = "50px";
     imageWraper.style.top = 0;
-    imageWraper.style.marginTop = "140px";
+    imageWraper.style.marginTop = "220px";
 
     let imageOpacity = (maxScroll - scrollTop) / (maxScroll - minScroll);
 
