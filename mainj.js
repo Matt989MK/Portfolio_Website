@@ -63,7 +63,7 @@ window.addEventListener("scroll", () => {
   var documentHeight=document.body.scrollHeight;
    var project1_1min =document.getElementById("project1").scrollHeight*0.2;
    var project1_1max =document.getElementById("project1").scrollHeight*0.4;
-
+   var bottom_grid_one = document.getElementById("grid-one")
 
 
 
@@ -89,6 +89,12 @@ window.addEventListener("scroll", () => {
       p3.style.opacity = 1 - test3;
 
     }
+      //SET visibility for each of the grids
+
+    bottom_grid_one.style.zIndex =1;
+  //  bottom_grid_one.style.position="relative";
+
+
 
     test.style.position = "fixed";
     imageWraper.style.position = "fixed";
