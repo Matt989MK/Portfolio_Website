@@ -63,13 +63,29 @@ window.addEventListener("scroll", () => {
   var documentHeight=document.body.scrollHeight;
    var project1_1min =document.getElementById("project1").scrollHeight*0.2;
    var project1_1max =document.getElementById("project1").scrollHeight*0.4;
-   var bottom_grid_one = document.getElementById("grid-one")
+   var bottom_grid_container = document.getElementById("grid-container");
+   var bottom_grid_one = document.getElementById("grid-one");
+   var bottom_grid_two = document.getElementById("grid-two");
+   var bottom_grid_three = document.getElementById("grid-three");
 
 
 
   const minScroll = 4000; // add 1430 for each
   const maxScroll = 8300; //limit
   var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+console.log(scrollTop);
+      //FIRST STEP PROJECT DESCRIPTION
+      if (scrollTop >= 9000 && scrollTop <= 9500){
+        bottom_grid_one.style.display="block";
+  bottom_grid_two.style.zIndex =0;
+        bottom_grid_one.style.zIndex =1;
+      //   bottom_grid_one.style.position="sticky";
+    } else if(scrollTop >= 9500&& scrollTop <= 13000){
+        bottom_grid_one.style.display ="none";
+      bottom_grid_two.style.zIndex =1;
+      bottom_grid_two.style.display="block";
+
+      }
   if (scrollTop > minScroll && scrollTop <= maxScroll) {
 
     if (scrollTop >= minScroll && scrollTop <= 5430) {
@@ -82,19 +98,16 @@ window.addEventListener("scroll", () => {
       p1.style.opacity = test2;
       p2.style.opacity = 1 - test2;
 
-    } else if (scrollTop >= 6860 && scrollTop <= maxScroll) {
-      let test3 = (maxScroll - scrollTop) / (maxScroll - minScroll);
+    } else if (scrollTop >= 6860 && scrollTop <= 8300) {
+      let test3 = (8300 - scrollTop) / (8300 - minScroll);
       p2.style.opacity = test3;
 
       p3.style.opacity = 1 - test3;
 
     }
-      //SET visibility for each of the grids
+      //STEP TWO SET visibility for each of the grids
 
-    bottom_grid_one.style.zIndex =1;
   //  bottom_grid_one.style.position="relative";
-
-
 
     test.style.position = "fixed";
     imageWraper.style.position = "fixed";
